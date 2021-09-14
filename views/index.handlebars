@@ -1,0 +1,157 @@
+<h1>Perfect Pizza</h1>
+
+
+<div>
+    {{!-- Start here --}}
+
+    <body>
+        <div>
+
+            <div class="cartTotal ">
+                <strong>Total price</strong>
+                <span class="cartTotalPrice">0.00</span>
+                <a href="#">
+                    <img src="shopping-cart.png" alt="">
+                </a>
+            </div>
+
+            <form action="/order" method="post">
+                <div class="cart">
+                    <h3>Shopping Cart</h3>
+                    <img src="shopping-cart.png" alt="">
+
+
+                    <table>
+                        <tr>
+
+                            <td><strong>
+                                    <param name="size" value="small">Small</param>
+                                </strong></td>
+                            <td><span>X{{counter}}</span></td>
+                            <td>R<span class="smallTotalPrice">{{smallTotalPrice}}</span></td>
+
+
+                        <tr>
+                            <td><strong>
+                                    <param name="size" value="medium">Medium</param>
+                                </strong></td>
+                            <td><span>X{{counter}}</span></td>
+                            <td>R<span class="mediumTotalPrice">{{mediumTotalPrice}}</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>
+                                    <param name="size" value="large">Large</param>
+                                </strong></td>
+                            <td><span>X{{counter}}</span></td>
+                            <td>R<span class="largeTotalPrice">{{largeTotalPrice}}</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>
+                                    <param name="" value="">Total cost</param>
+                                </strong></td>
+
+
+                            <td>R<span class="totalPrice">{{TotalPrice}}</span></td>
+                        </tr>
+                    </table>
+                    <button class="btn orderMediumPizza" type="submit" style="margin-left: auto">Order</button>
+                </div>
+            </form>
+
+            <form action="/Buy" method="POST" action="/count">
+                <div class="pizzas">
+                    <div class="pizza medium">
+                        <div class="info">
+                            <img src="pizza.png" alt="">
+                            <h2>
+                                <param name="size" value="mediam">Medium Pizza</param>
+                            </h2>
+                            <strong>
+                                <param name="price" value="number">R65.00</param>
+                            </strong>
+
+
+                            <div>
+                                medium margeritha pizza with 3 toppings max.
+                                2 or less meat topping.
+                                3 or less other toppings.
+                            </div>
+                        </div>
+
+                        <div class="orderBox">
+                            <button class="btn orderMediumPizza" type="submit" style="margin-left: auto">Buy</button>
+                        </div>
+                    </div>
+                    
+                    <div class="pizza large">
+                        <div class="info">
+                            <img src="pizza.png" alt="">
+                            <h2>
+                                <param name="size" value="large">large Pizza</param>
+                            </h2>
+                            <strong>
+                                <param name="number" value="price">R85.00</params>
+                            </strong>
+                            <div>
+                                large margeritha pizza with 3 toppings max.
+                                3 meat toppings max.
+                                3 or less other toppings.
+                            </div>
+                        </div>
+                        <div class="orderBox">
+                            <button class="btn orderLargePizza" type="submit" style="margin-left: auto">Buy</button>
+                        </div>
+
+                    </div>
+                    <div class="pizza small">
+                        <div class="info">
+                            <img src="pizza.png" alt="">
+                            <h2>
+                                <param name="size" value="small">Small Pizza</param>
+                            </h2>
+                            <strong>
+                                <param name="price" value="number">R35.00</params>
+                            </strong>
+
+                            <i>
+                                <ul>
+                                    <li>small pizza with 3 toppings</li>
+                                    <li>1 meat topping.</li>
+                                    <li>3 or less other toppings.</li>
+                                </ul>
+                            </i>
+                        </div>
+                        <div class="orderBox">
+                            <button class="btn orderSmallPizza" type="submit" style="margin-left: auto">Buy</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </form>
+        <div class="footer">
+            <div class="contact">
+
+            </div>
+
+        </div>
+</div>
+<form action="/count" method="post">
+    <div class="counter">
+        {{counter}}
+    </div>
+    <input type="submit" value="Press button to count">
+
+</form>
+
+</div>
+<hr>
+
+
+<div>
+
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+
+</div>
+</body>

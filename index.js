@@ -18,7 +18,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
-const PORT = process.env.PORT || 3017;
+const PORT = process.env.PORT || 3030;
 
 // enable the req.body object - to allow us to use HTML forms
 app.use(express.json());
@@ -38,31 +38,32 @@ let counter = 0;
 
 
 app.get('/', function(req, res) {
+    console.log(pizza.smallsTotal() + 'gggggg')
     res.render('index', {
-        counter
 
+        smallT: pizza.smallsTotal(),
+        mediumT: pizza.mediumsTotal(),
+        largeT: pizza.largerTotal()
     });
-
 });
 
-app.post('/count', function(req, res) {
-    counter++;
+app.post('/small', function(req, res) {
 
-    res.redirect('/')
-});
 
-app.get('/Buy', function(req, res) {
-    res.render('index', {
-        counter,
-        list: pizza.listAll()
-    })
-
+    pizza.smallPizza(req.body.size)
+    pizza.Total(req.body.size)
+    res.redirect('/');
 })
-app.post('/Buy', function(req, res) {
 
-    // console.log(pizza.listAll(req.body.size))
-    pizza.listAll(req.body.size)
+app.post('/medium', function(req, res) {
+    pizza.Total(req.body.size)
+    pizza.mediumPizza(req.body.size)
+    res.redirect('/');
+})
 
+app.post('/large', function(req, res) {
+    pizza.Total(req.body.size)
+    pizza.largePizza(req.body.size)
     res.redirect('/');
 })
 

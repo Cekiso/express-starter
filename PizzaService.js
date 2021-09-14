@@ -1,87 +1,69 @@
 module.exports = function PizzaApp() {
 
-    let smallCost;
-    let mediumTotal;
-    let largeTotal;
+    let smallTotal = 0;
+    let mediumTotal = 0;
+    let largeTotal = 0;
+    let grandTotal = 0;
+
+    var smallcounter = 0;
+    var mediumcounter = 0;
+    var largecounter = 0;
 
 
-    var smallTotalPrice = 0;
-    var mediumTotalPrice = 0;
-    var largeTotalPrice = 0;
-    // const pizzas = pizzaList || [];
-    var pizzas = {};
-    var message = "";
-
-    function listAll(size) {
-        var sizes = pizzas;
-        // console.log(sizes)
-        setList(size)
-        if (size == 'small' && price == 'number') {
-            message = small;
-        } else if (size == 'medium') {
-            message = medium;
-        } else if (size == 'large') {
-            message = large;
-        } else {
-            message = '';
+    function smallPizza(size) {
+        if (size === "small") {
+            smallTotal += 35
+            grandTotal += 35
+            smallcounter++
         }
-        // var size = pizzas;
-        // var count = size.rows;
-        // for (var i = 0; i < count; i++) {
-        //     console.log(size.rows[i]);
-        //}
-
-
     }
 
-    function setList(size) {
-        smallCost += smallTotalPrice;
-
-        if (pizzas[size] === undefined) {
-            pizzas[size] = 1
-        } else {
-            pizzas[size]++
+    function mediumPizza(size) {
+        if (size === "medium") {
+            mediumTotal += 65
+            grandTotal += 65
+            mediumcounter++
         }
-
     }
 
-    function getLists() {
-        return message
+
+    function largePizza(size) {
+        if (size === "large") {
+            largeTotal += 120
+            grandTotal += 120
+            largecounter++
+        }
     }
 
-    function count() {
-        var pizzaList = Object.keys(pizzas);
-        console.log(pizzaList)
-        return pizzaList.length;
-    }
-    //create a function that returns all the name in the list 
-
-    function sizeList() {
-        return pizzas;
-
+    function Total() {
+        return grandTotal;
     }
 
-    function addPizza(pizza) {
 
+    function largerTotal() {
+        return largeTotal
     }
 
-    function deletePizza(pizzaId) {
 
+    function mediumsTotal() {
+        return mediumTotal
     }
 
-    function updatePizza(pizzaId) {
-
+    function smallsTotal() {
+        return smallTotal
     }
+
+
 
     return {
-        addPizza,
-        deletePizza,
-        updatePizza,
-        listAll,
-        setList,
-        getLists,
-        sizeList,
-        count,
+        smallPizza,
+        mediumPizza,
+        largerTotal,
+        largeTotal,
+        mediumsTotal,
+        smallsTotal,
+        Total,
+        largePizza,
     }
 
 }
